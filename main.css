@@ -1,0 +1,38 @@
+body {
+  background-color: rgb(145, 217, 237);
+}
+
+.form-css {
+  display: flex;
+  flex-direction: column;
+  padding-top: 200px;
+  padding-left: 500px;
+}
+
+.input-css {
+  margin-bottom: 50px;
+  padding: 20px;
+  width: 500px;
+  color: rgb(150, 127, 255);
+  outline: none;
+  border: 2px solid rgb(0, 255, 115);
+}
+
+.inf0-css  {
+  font-size: large;
+  font-weight: bold;
+  padding: 20px;
+  width: 497px;
+  border: 3px solid yellow;
+  margin-bottom: 40px;
+  color: rgb(117, 33, 84);
+}
+
+.btn {
+  background-color: rgb(101, 44, 148);
+  padding: 20px;
+  width: 543px;
+  border: none;
+  color: yellow;
+  cursor: pointer;
+}
