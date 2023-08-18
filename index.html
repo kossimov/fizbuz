@@ -3,23 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Function</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="./main.css">
-  <title>7-dars(52-dars)</title>
 </head>
 <body>
 
-
-  <form class="js-form form-css">
-    <h1>Soni toping hurmatli bilag'on</h1>
-    <input class="js-input input-css" type="number"
-    aria-label="Enter your number" placeholder="Find number" min="0" max="100">
-    <output class="info-text inf0-css"></output>
-     <button class="btn" type="submit">Check</button>
-  </form>
+  <div class="container-all" style="width: 1340px; padding-left: 20px; padding-right: 20px; margin: 0 auto;">
 
 
+    <h1 class="text-info text-center mt-5 mb-5">Find random number (1-100)</h1>
 
+    <form class="js-random-form">
 
+      <input class="js-random-input" type="number" min="1" placeholder="Enter your number" style="width: 900px; outline: none; padding: 15px; border-radius: 5px; border: none; background-color: rgb(172, 196, 216);">
+
+      <button type="text" style="margin-left: 10px; outline: none; padding: 15px 30px; border-radius: 5px; border: none; background-color: rgb(78, 111, 111);">Submit</button>
+
+      <p class="js-random-chance w-25 rounded-1 chanse"></p>
+
+      <p class="js-random-result result-text w-75"></p>
+
+    </form>
+  </div>
 
 
   <script src="./main.js"></script>

@@ -1,37 +1,60 @@
-var elFindNumForm = document.querySelector(".js-form");
-var elFindNumInput = elFindNumForm.querySelector(".js-input");
-var elFindNumOutput = elFindNumForm.querySelector(".info-text");
+var elRandomForm = document.querySelector(".js-random-form");
+var elRandomInput = elRandomForm.querySelector(".js-random-input");
+var elRandomChance = elRandomForm.querySelector(".js-random-chance");
+var elRandomResult = elRandomForm.querySelector(".js-random-result");
 
+var randomChance = 6;
+elRandomChance.textContent = `Urinishlar soni: ${randomChance}`;
+var randomNumber = Math.floor(Math.random() * 100) + 1;
 
-var attemptCount = 6;
-var randomNumber = Math.round(Math.random() * 100);
-
-console.log(randomNumber);
-
-
-function TheNumber(value) {
-  --attemptCount;
-  if (value <= 0 || isNaN(value)) {
-    elFindNumOutput.textContent = "0 katta son kiriting yokida raqam kiriting!";
-  } else if(value == randomNumber){
-    elFindNumOutput.textContent = "Siz yutdingiz bilag'on, tabriklayman";
-    elFindNumInput.disabled = true;
-  } else if (attemptCount == 0) {
-    elFindNumOutput.textContent = "Urinishlar soni tugadi bilag'on!";
-    elFindNumInput.disabled = true;
-  } else if (value > randomNumber) {
-    elFindNumOutput.textContent = "Siz kiritgan son random sondan katta!";
-  } else {
-    elFindNumOutput.textContent = "Siz kiritgan son random sondan kichik!";
+function findRandomNumber (userNum){
+  
+  if(userNum > randomNumber) {
+    elRandomResult.classList.add("result-text-big");
+    elRandomResult.classList.remove("result-text");
+    elRandomResult.classList.remove("result-text-little");
+    elRandomResult.classList.remove("result-text-right");
+    return "Kiritilgan raqam random raqamdan katta !";
+  }
+  if(userNum < randomNumber) {
+    elRandomResult.classList.add("result-text-little");
+    elRandomResult.classList.remove("result-text-big");
+    elRandomResult.classList.remove("result-text");
+    elRandomResult.classList.remove("result-text-right");
+    return "Kiritilgan raqam random raqamdan kichik !";
+  } 
+  if(userNum = randomNumber) {
+    elRandomResult.classList.add("result-text-right");
+    elRandomResult.classList.remove("result-text-little");
+    elRandomResult.classList.remove("result-text-big");
+    elRandomResult.classList.remove("result-text");
+    return "Raqamni to'g'ri topdingiz 🙌";
+  } 
+  else{
+    return "Raqamni topolmadingiz ☠️";
   }
 }
 
+function randomChanceAmount () {
 
-elFindNumForm.addEventListener("submit", function(evt){
+  randomChance-=1;
+
+  if(randomChance === 0) {
+    elRandomChance.classList.add("chanse-end");
+    elRandomChance.classList.remove("chanse");
+    elRandomChance.textContent = `Game Over ☠️`;
+    elRandomInput.disabled = true;
+  } else {
+    elRandomChance.textContent = `Urinishlar soni: ${randomChance}`;
+  }
+}
+
+elRandomForm.addEventListener("submit", function(evt){
   evt.preventDefault();
+  
+  randomChanceAmount()
+  
+  var randomInputValue = elRandomInput.value;
 
-
-  var elFindNumInputValue = Number(elFindNumInput.value);
-
-  TheNumber(elFindNumInputValue);
+  elRandomResult.textContent = findRandomNumber(randomInputValue)
 })

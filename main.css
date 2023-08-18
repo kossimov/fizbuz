@@ -1,38 +1,41 @@
+/* Find the random number */
+
 body {
-  background-color: rgb(145, 217, 237);
+  background-color: rgb(145, 14, 14);
 }
-
-.form-css {
-  display: flex;
-  flex-direction: column;
-  padding-top: 200px;
-  padding-left: 500px;
-}
-
-.input-css {
-  margin-bottom: 50px;
+.result-text {
+  display: inline-block;
+  margin-top: 15px;
   padding: 20px;
-  width: 500px;
-  color: rgb(150, 127, 255);
-  outline: none;
-  border: 2px solid rgb(0, 255, 115);
+  font-size: 32px;
+  line-height: 20px;
+  color: #fff;
+  background-color: rgb(127, 150, 88);
 }
-
-.inf0-css  {
-  font-size: large;
-  font-weight: bold;
+.result-text-big {
+  display: inline-block;
+  margin-top: 15px;
   padding: 20px;
-  width: 497px;
-  border: 3px solid yellow;
-  margin-bottom: 40px;
-  color: rgb(117, 33, 84);
+  font-size: 32px;
+  line-height: 20px;
+  color: #fff;
+  background-color: rgb(17, 80, 161);
 }
-
-.btn {
-  background-color: rgb(101, 44, 148);
+.result-text-little {
+  display: inline-block;
+  margin-top: 15px;
   padding: 20px;
-  width: 543px;
-  border: none;
-  color: yellow;
-  cursor: pointer;
+  font-size: 32px;
+  line-height: 20px;
+  color: #fff;
+  background-color: rgb(160, 1, 162);
+}
+.result-text-right {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 20px;
+  font-size: 32px;
+  line-height: 20px;
+  color: #fff;
+  background-color: rgb(29, 154, 29);
 }
